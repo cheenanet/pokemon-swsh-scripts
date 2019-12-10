@@ -8,7 +8,7 @@
 - [ebith/Switch-Fightstick](https://github.com/ebith/Switch-Fightstick)
 
 ## 掲載内容
-- tournament.py  
+- tournament-battle.py  
 シュートスタジアムのトーナメント戦の自動化。
 - egg-hatching.py  
 タマゴ孵化の自動化。最初にXボタンでメニューを表示し「マップ」にカーソルを合わせた上で実行してください。
