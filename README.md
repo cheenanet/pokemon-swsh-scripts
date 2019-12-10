@@ -16,3 +16,6 @@
 ## 資料
 「ポケットモンスター ソード・シールド」におけるポケモンのタマゴ孵化や「かえんだま」入手作業を自動化する – 無能ブログ  
 https://blog.cheena.net/2533
+
+NintendoSwitchをPCから操作する - おいら屋ファクトリー  
+https://blog.feelmy.net/control-nintendo-switch-from-computer/
