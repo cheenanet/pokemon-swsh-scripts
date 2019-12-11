@@ -20,16 +20,9 @@ def send(msg, duration=0):
 
 ser = serial.Serial(args.port, 9600)
 
-# そらをとぶ
-# タマゴもらう
-#
-#
-#
-#
-#
-
 # サイクル20 = 30
-laps = 20 # 10000 = 60?
+# サイクル40 = 60
+laps = 20
 
 try:
     # テスト
@@ -86,11 +79,8 @@ try:
                 print(f'{lap + 1}周目')
 
                 send('LY MIN', 0.5)
-
                 send('LX MIN', 0.5)
-
                 send('LY MAX', 0.5)
-
                 send('LX MAX', 0.5)
 
                 send('Button B', 0.3)
