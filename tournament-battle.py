@@ -25,7 +25,6 @@ ser = serial.Serial(args.port, 9600)
 fight_time = 60 * 2 + 20
 
 try:
-
     # テスト
     send('Button B', 3)
 
@@ -75,7 +74,7 @@ try:
             sleep(1)
 
             send('Button A', 0.1) # セリフ3
-            sleep(14)
+            sleep(15)
 
             # 勝負
 
