@@ -22,7 +22,7 @@ def send(msg, duration=0):
 ser = serial.Serial(args.port, 9600)
 
 # 試合時間
-fight_time = 60 * 2 + 15
+fight_time = 60 * 2 + 20
 
 try:
 
@@ -66,7 +66,7 @@ try:
 
         for i in range(0, 3):
             send('LY MIN', 3) # 入場する
-            sleep(6)
+            sleep(5)
 
             send('Button A', 0.1) # セリフ1
             sleep(1)
@@ -75,7 +75,7 @@ try:
             sleep(1)
 
             send('Button A', 0.1) # セリフ3
-            sleep(13)
+            sleep(14)
 
             # 勝負
 
