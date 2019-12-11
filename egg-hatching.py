@@ -22,7 +22,7 @@ ser = serial.Serial(args.port, 9600)
 
 # サイクル20 = 30
 # サイクル40 = 60
-laps = 20
+laps = 30
 
 try:
     for i in range(0, 6): # 5匹孵化×6回
@@ -41,7 +41,7 @@ try:
             sleep(0.5)
 
             send('Button A', 0.1)
-            sleep(2)
+            sleep(5)
 
             # タマゴもらう
             send('LY MAX', 0.7)
