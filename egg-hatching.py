@@ -25,9 +25,6 @@ ser = serial.Serial(args.port, 9600)
 laps = 20
 
 try:
-    # テスト
-    send('HAT CENTER', 3)
-
     for i in range(0, 6): # 5匹孵化×6回
         start_time = time.time()
 

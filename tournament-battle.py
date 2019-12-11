@@ -25,9 +25,6 @@ ser = serial.Serial(args.port, 9600)
 fight_time = 60 * 2 + 20
 
 try:
-    # テスト
-    send('Button B', 3)
-
     start_time = time.time()
 
     # トーナメント自動化
