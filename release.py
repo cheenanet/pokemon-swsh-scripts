@@ -7,8 +7,8 @@ import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
-parser.add_argument('--rows', type=int)
-parser.add_argument('--cols', type=int)
+parser.add_argument('--rows', type=int, default=5)
+parser.add_argument('--cols', type=int, default=6)
 args = parser.parse_args()
 
 ser = serial.Serial(args.port, 9600)

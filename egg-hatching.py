@@ -7,7 +7,7 @@ import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
-parser.add_argument('--laps', type=int)
+parser.add_argument('--laps', type=int, default=30)
 args = parser.parse_args()
 
 free_time = 18

@@ -8,7 +8,7 @@ import random
 
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
-parser.add_argument('--fight_time', type=int)
+parser.add_argument('--fight_time', type=int, default=150)
 args = parser.parse_args()
 
 datetime = datetime.datetime
