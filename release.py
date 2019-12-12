@@ -24,10 +24,10 @@ try:
     for row in range(0, args.rows):
         for col in range(0, args.cols):
             send('Button A', 0.1)
-            sleep(0.3)
+            sleep(0.2)
 
             send('LY MIN', 0.1)
-            sleep(0.2)
+            sleep(0.1)
 
             send('LY MIN', 0.1)
             sleep(0.1)
@@ -45,7 +45,7 @@ try:
             sleep(0.1)
 
             send('LX MAX', 0.1) # 次へ
-            sleep(0.3)
+            sleep(0.2)
 
         send('LX MAX', 0.1) # てもちへ
         sleep(0.1)
