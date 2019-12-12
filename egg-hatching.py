@@ -7,22 +7,12 @@ import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
+parser.add_argument('--laps', type=int)
 args = parser.parse_args()
 
-datetime = datetime.datetime
-
-def send(msg, duration=0):
-    now = datetime.now()
-    print(f'[{now}] {msg}')
-    ser.write(f'{msg}\r\n'.encode('utf-8'))
-    sleep(duration)
-    ser.write(b'RELEASE\r\n')
+free_time = 18
 
 ser = serial.Serial(args.port, 9600)
-
-# サイクル20 = 30
-# サイクル40 = 60
-laps = 30
 
 try:
     for i in range(0, 6): # 5匹孵化×6回
@@ -58,10 +48,10 @@ try:
             sleep(3)
 
             send('Button A', 0.1) # 預け屋さんからタマゴをもらった
-            sleep(3)
+            sleep(2.5)
 
             send('Button A', 0.1) # 手持ちに加えました
-            sleep(2)
+            sleep(1.5)
 
             send('Button A', 0.1) # 大事に育ててね
             sleep(0.1)
@@ -69,38 +59,36 @@ try:
             send('LY MIN', 3)
             sleep(0.1)
 
-            send('LX MAX', 2)
+            send('LX MAX', 1.5)
             sleep(0.1)
 
-            for lap in range(0, laps):
+            for lap in range(0, args.laps):
                 print(f'{lap + 1}周目')
 
                 send('LY MIN', 0.5)
-                send('LX MIN', 0.5)
+                send('LX MIN', 0.6)
                 send('LY MAX', 0.5)
                 send('LX MAX', 0.5)
-
-                send('Button B', 0.3)
+                send('Button B', 0.5)
 
             # ボタン押せるようになるまで待機
-            for wait in range(0, 8):
+            for wait in range(0, free_time):
                 send('Button B', 0.1)
                 sleep(1)
 
             print(f'{j + 1}匹孵化完了？：{round(time.time() - lap_start_time, 2)}秒経過（合計：{round(time.time() - start_time, 2)}秒）')
 
-        for lap in range(0, laps):
+        for lap in range(0, args.laps):
             print(f'{lap + 1}周目')
 
             send('LY MIN', 0.5)
             send('LX MIN', 0.5)
             send('LY MAX', 0.5)
             send('LX MAX', 0.5)
-
-            send('Button B', 0.3)
+            send('Button B', 0.5)
 
         # ボタン押せるようになるまで待機
-        for wait in range(0, 8):
+        for wait in range(0, free_time):
             send('Button B', 0.1)
             sleep(1)
 
@@ -194,3 +182,9 @@ except KeyboardInterrupt:
     send('RELEASE')
     ser.close()
 
+def send(msg, duration=0):
+    now = datetime.datetime.now()
+    print(f'[{now}] {msg}')
+    ser.write(f'{msg}\r\n'.encode('utf-8'))
+    sleep(duration)
+    ser.write(b'RELEASE\r\n')

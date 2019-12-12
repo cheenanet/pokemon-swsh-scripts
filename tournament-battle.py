@@ -8,21 +8,12 @@ import random
 
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
+parser.add_argument('--fight_time', type=int)
 args = parser.parse_args()
 
 datetime = datetime.datetime
 
-def send(msg, duration=0):
-    now = datetime.now()
-    print(f'[{now}] {msg}')
-    ser.write(f'{msg}\r\n'.encode('utf-8'))
-    sleep(duration)
-    ser.write(b'RELEASE\r\n')
-
 ser = serial.Serial(args.port, 9600)
-
-# 試合時間
-fight_time = 60 * 2 + 20
 
 try:
     start_time = time.time()
@@ -115,14 +106,14 @@ try:
             fight_start_time = time.time()
 
             while True:
-                if (time.time() - fight_start_time) > fight_time:
+                if (time.time() - fight_start_time) > args.fight_time:
                     break
 
                 send('Button A', 0.1)
                 sleep(0.1)
 
                 if random.randrange(2):
-                    time_left = round(fight_time - (time.time() - fight_start_time), 2)
+                    time_left = round(args.fight_time - (time.time() - fight_start_time), 2)
                     print(f'[{datetime.now()}] 残り{time_left}秒')
 
             print('勝利')
@@ -142,3 +133,10 @@ try:
 except KeyboardInterrupt:
     send('RELEASE')
     ser.close()
+
+def send(msg, duration=0):
+    now = datetime.now()
+    print(f'[{now}] {msg}')
+    ser.write(f'{msg}\r\n'.encode('utf-8'))
+    sleep(duration)
+    ser.write(b'RELEASE\r\n')
