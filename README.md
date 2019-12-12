@@ -17,7 +17,7 @@
 `python3 egg-hatching.py --laps 30 /dev/ttyUSB0`
     - `--laps` 自転車で周回する数（孵化歩数に影響）。デフォルト: 30 
 - release.py  
-ポケモン逃がしの自動化。 ボックス内のポケモンをすべて逃がします。
+ポケモン逃がしの自動化。 ボックス内のポケモンをすべて逃がします。  
 `python3 release.py --rows 1 --cols 6 /dev/ttyUSB0`
     - `--rows` 逃がす範囲の列。デフォルト: 5
     - `--cols` 逃がす範囲の行。デフォルト: 6
