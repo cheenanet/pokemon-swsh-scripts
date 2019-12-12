@@ -10,6 +10,13 @@ parser.add_argument('port')
 parser.add_argument('--laps', type=int, default=30)
 args = parser.parse_args()
 
+def send(msg, duration=0):
+    now = datetime.datetime.now()
+    print(f'[{now}] {msg}')
+    ser.write(f'{msg}\r\n'.encode('utf-8'))
+    sleep(duration)
+    ser.write(b'RELEASE\r\n')
+
 free_time = 18
 
 ser = serial.Serial(args.port, 9600)
@@ -181,10 +188,3 @@ try:
 except KeyboardInterrupt:
     send('RELEASE')
     ser.close()
-
-def send(msg, duration=0):
-    now = datetime.datetime.now()
-    print(f'[{now}] {msg}')
-    ser.write(f'{msg}\r\n'.encode('utf-8'))
-    sleep(duration)
-    ser.write(b'RELEASE\r\n')

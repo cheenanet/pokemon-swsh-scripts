@@ -11,6 +11,13 @@ parser.add_argument('port')
 parser.add_argument('--fight_time', type=int, default=150)
 args = parser.parse_args()
 
+def send(msg, duration=0):
+    now = datetime.datetime.now()
+    print(f'[{now}] {msg}')
+    ser.write(f'{msg}\r\n'.encode('utf-8'))
+    sleep(duration)
+    ser.write(b'RELEASE\r\n')
+
 datetime = datetime.datetime
 
 ser = serial.Serial(args.port, 9600)
@@ -133,10 +140,3 @@ try:
 except KeyboardInterrupt:
     send('RELEASE')
     ser.close()
-
-def send(msg, duration=0):
-    now = datetime.now()
-    print(f'[{now}] {msg}')
-    ser.write(f'{msg}\r\n'.encode('utf-8'))
-    sleep(duration)
-    ser.write(b'RELEASE\r\n')
