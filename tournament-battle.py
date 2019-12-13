@@ -11,14 +11,14 @@ parser.add_argument('port')
 parser.add_argument('--fight_time', type=int, default=150)
 args = parser.parse_args()
 
+dt = datetime.datetime
+
 def send(msg, duration=0):
-    now = datetime.datetime.now()
+    now = dt.now()
     print(f'[{now}] {msg}')
     ser.write(f'{msg}\r\n'.encode('utf-8'))
     sleep(duration)
     ser.write(b'RELEASE\r\n')
-
-datetime = datetime.datetime
 
 ser = serial.Serial(args.port, 9600)
 
@@ -121,7 +121,7 @@ try:
 
                 if random.randrange(2):
                     time_left = round(args.fight_time - (time.time() - fight_start_time), 2)
-                    print(f'[{datetime.now()}] 残り{time_left}秒')
+                    print(f'[{dt.now()}] 残り{time_left}秒')
 
             print('勝利')
 
@@ -135,7 +135,7 @@ try:
 
         send('LY MIN', 1) # 受付に突っ込む
 
-        print(f'[{datetime.now()}] {round(time.time() - start_time, 2)}秒経過（{lap}回目）')
+        print(f'[{dt.now()}] {round(time.time() - start_time, 2)}秒経過（{lap}回目）')
 
 except KeyboardInterrupt:
     send('RELEASE')
