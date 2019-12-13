@@ -73,7 +73,7 @@ try:
                 print(f'{lap + 1}周目')
 
                 send('LY MIN', 0.5)
-                send('LX MIN', 0.6)
+                send('LX MIN', 1)
                 send('LY MAX', 0.5)
                 send('LX MAX', 0.5)
                 send('Button B', 0.5)
