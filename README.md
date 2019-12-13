@@ -29,3 +29,6 @@ https://blog.cheena.net/2533
 
 NintendoSwitchをPCから操作する - おいら屋ファクトリー  
 https://blog.feelmy.net/control-nintendo-switch-from-computer/
+
+## ライセンス
+[MITライセンス](https://github.com/cheenanet/pokemon-swsh-scripts/blob/master/LICENSE)
