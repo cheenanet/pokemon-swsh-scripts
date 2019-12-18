@@ -24,7 +24,7 @@
     - `--cols` 逃がす範囲の行。デフォルト: 6
     
 ## バグ報告等
-- Pull Request（GitHubのアカウント必要）: https://github.com/cheenanet/pokemon-swsh-scripts/pulls
+- Issues（GitHubのアカウント必要）: https://github.com/cheenanet/pokemon-swsh-scripts/issues
 - Twitter: [@cheenanet](https://twitter.com/cheenanet)
 - Email: cheena@cheena.net
 
