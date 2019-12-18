@@ -22,6 +22,11 @@
 `python3 release.py --rows 1 --cols 6 /dev/ttyUSB0`
     - `--rows` 逃がす範囲の列。デフォルト: 5
     - `--cols` 逃がす範囲の行。デフォルト: 6
+    
+## バグ報告等
+- Pull Request（GitHubのアカウント必要）: https://github.com/cheenanet/pokemon-swsh-scripts/pulls
+- Twitter: [@cheenanet](https://twitter.com/cheenanet)
+- Email: cheena@cheena.net
 
 ## 資料
 「ポケットモンスター ソード・シールド」におけるポケモンのタマゴ孵化や「かえんだま」入手作業を自動化する – 無能ブログ  
