@@ -61,19 +61,20 @@ try:
             sleep(1.5)
 
             send('Button A', 0.1) # 大事に育ててね
-            sleep(0.1)
+            sleep(0.2)
 
             send('LY MIN', 3)
             sleep(0.1)
 
-            send('LX MAX', 1.5)
+            send('LX MAX', 2)
             sleep(0.1)
 
+            # ぐるぐる回る
             for lap in range(0, args.laps):
                 print(f'{lap + 1}周目')
 
                 send('LY MIN', 0.5)
-                send('LX MIN', 1)
+                send('LX MIN', 0.8)
                 send('LY MAX', 0.5)
                 send('LX MAX', 0.5)
                 send('Button B', 0.5)
@@ -83,8 +84,9 @@ try:
                 send('Button B', 0.1)
                 sleep(1)
 
-            print(f'{j + 1}匹孵化完了？：{round(time.time() - lap_start_time, 2)}秒経過（合計：{round(time.time() - start_time, 2)}秒）')
+            print(f'{j + 1}つ目のタマゴが完了：{round(time.time() - lap_start_time, 2)}秒経過（合計：{round(time.time() - start_time, 2)}秒）')
 
+        # 孵化歩数の残り半分を歩く
         for lap in range(0, args.laps):
             print(f'{lap + 1}周目')
 
