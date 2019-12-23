@@ -7,7 +7,7 @@ import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
-parser.add_argument('--laps', type=int, default=30)
+parser.add_argument('--laps', type=int, default=20)
 args = parser.parse_args()
 
 def send(msg, duration=0):
@@ -69,15 +69,15 @@ try:
             send('LX MAX', 2)
             sleep(0.1)
 
-            # ぐるぐる回る
+            # ぐるぐる回る（孵化歩数の1/3）
             for lap in range(0, args.laps):
                 print(f'{lap + 1}周目')
 
                 send('LY MIN', 0.5)
-                send('LX MIN', 0.8)
-                send('LY MAX', 0.5)
+                send('LX MIN', 0.7)
+                send('LY MAX', 0.6)
                 send('LX MAX', 0.5)
-                send('Button B', 0.5)
+                send('Button B', 0.1)
 
             # ボタン押せるようになるまで待機
             for wait in range(0, free_time):
@@ -86,15 +86,15 @@ try:
 
             print(f'{j + 1}つ目のタマゴが完了：{round(time.time() - lap_start_time, 2)}秒経過（合計：{round(time.time() - start_time, 2)}秒）')
 
-        # 孵化歩数の残り半分を歩く
-        for lap in range(0, args.laps):
+        # 孵化歩数の残り2/3を歩く
+        for lap in range(0, args.laps * 2):
             print(f'{lap + 1}周目')
 
             send('LY MIN', 0.5)
-            send('LX MIN', 0.5)
-            send('LY MAX', 0.5)
+            send('LX MIN', 0.7)
+            send('LY MAX', 0.6)
             send('LX MAX', 0.5)
-            send('Button B', 0.5)
+            send('Button B', 0.1)
 
         # ボタン押せるようになるまで待機
         for wait in range(0, free_time):
