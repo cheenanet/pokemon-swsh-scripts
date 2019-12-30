@@ -8,13 +8,15 @@
 - [ebith/Switch-Fightstick](https://github.com/ebith/Switch-Fightstick)
 
 ## 掲載内容
+`/dev/ttyUSB0` は環境に応じて変更すること。Linuxでは `/dev/ttyUSB0` など。Windows Subsystem for Linux (WSL)の場合は `/dev/ttyS1` など（COMポートの番号に合わせる）。
+
 - tournament-battle.py  
 シュートスタジアムのトーナメント戦の自動化。[85-117行](https://github.com/cheenanet/pokemon-swsh-scripts/blob/e943c47136710ab6023f60bf92a971a5bb915431/tournament-battle.py#L85-L117)においてスペシャルアップ（シンボラー用、資料参照）を使用しているため、不要な場合は削除する。  
 `python3 tournament-battle.py --fight_time 150 /dev/ttyUSB0`
     - `--fight_time` 一試合の時間（秒）。長くかかる場合は増やす。デフォルト: 150
 - egg-hatching.py  
 タマゴ孵化の自動化。タマゴ5個の孵化を6回行います。ボックスを空にして閉じ、特性がほのおのからだのポケモンを手持ちに入れ、預け屋でタマゴができている状態で、Xボタンでメニューを表示し「マップ」にカーソルを合わせた上で実行する。  
-`python3 egg-hatching.py --laps 30 /dev/ttyUSB0`
+`python3 egg-hatching.py --laps 20 /dev/ttyUSB0`
     - `--laps` 自転車で周回する数（孵化歩数に影響）。デフォルト: 20  
     孵化対象のポケモンのタマゴ歩数を https://yakkun.com/swsh/zukan/ で調べる。40サイクルのポケモンは60周で誕生する。効率化のためこのスクリプトでは1/3の歩数を歩くと次のタマゴを受け取りにいき、タマゴ5匹を持つと残りの2/3を歩くようになっている。60周では20が適している。
 - release.py  
