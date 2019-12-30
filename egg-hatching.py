@@ -73,11 +73,11 @@ try:
             for lap in range(0, args.laps):
                 print(f'{lap + 1}周目')
 
-                send('LY MIN', 0.5)
-                send('LX MIN', 0.7)
-                send('LY MAX', 0.6)
-                send('LX MAX', 0.5)
+                send('LY MAX', 0.5)
                 send('Button B', 0.1)
+                send('LX MAX', 0.5)
+                send('LY MIN', 0.5)
+                send('LX MIN', 0.5)
 
             # ボタン押せるようになるまで待機
             for wait in range(0, free_time):
@@ -90,11 +90,11 @@ try:
         for lap in range(0, args.laps * 2):
             print(f'{lap + 1}周目')
 
-            send('LY MIN', 0.5)
-            send('LX MIN', 0.7)
-            send('LY MAX', 0.6)
-            send('LX MAX', 0.5)
+            send('LY MAX', 0.5)
             send('Button B', 0.1)
+            send('LX MAX', 0.5)
+            send('LY MIN', 0.5)
+            send('LX MIN', 0.5)
 
         # ボタン押せるようになるまで待機
         for wait in range(0, free_time):
