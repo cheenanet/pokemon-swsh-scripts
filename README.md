@@ -20,11 +20,10 @@
     - `--laps` 自転車で周回する数（孵化歩数に影響）。デフォルト: 20  
     孵化対象のポケモンのタマゴ歩数によってこの値を変更する（https://yakkun.com/swsh/zukan/ を参照）。40サイクルのポケモンはおよそ60周で誕生する。効率化のためこのスクリプトでは1/3の歩数を歩くと次のタマゴを受け取りにいき、タマゴ5匹を持つと残りの2/3を歩くようになっているため、60周では20周が適している。タマゴが見つかるまでの歩数を考慮し、少なくとも15周にするとよい。
 - release.py  
-ポケモン逃がしの自動化。 ボックス内のポケモンをすべて逃がす。  
-`python3 release.py --rows 1 --cols 6 /dev/ttyUSB0`
-    - `--rows` 逃がす範囲の列。デフォルト: 5
-    - `--cols` 逃がす範囲の行。デフォルト: 6
-    
+ポケモン逃がしの自動化。 ボックス内のポケモンをすべて逃がす。左上から順番に逃がしているため、並びに空きがないようにすること。  
+`python3 release.py --count 12 /dev/ttyUSB0`
+    - `--count` 逃がすポケモンの数。
+
 ## バグ報告等
 - Issues（GitHubのアカウント必要）: https://github.com/cheenanet/pokemon-swsh-scripts/issues
 - Twitter: [@cheenanet](https://twitter.com/cheenanet)
