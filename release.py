@@ -20,8 +20,8 @@ def send(msg, duration=0):
 ser = serial.Serial(args.port, 9600)
 
 try:
-    for i in range(1, args.count):
-        print(f'{i}匹目')
+    for i in range(0, args.count):
+        print(f'{i + 1}匹目')
 
         send('Button A', 0.1)
         sleep(0.2)
@@ -47,7 +47,7 @@ try:
         send('LX MAX', 0.1) # 次へ
         sleep(0.2)
 
-        if i % 6 == 0:
+        if i + 1 % 6 == 0:
             send('LX MAX', 0.1) # てもちへ
             sleep(0.1)
 
