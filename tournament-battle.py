@@ -82,11 +82,14 @@ try:
             sleep(15)
 
             # 勝負
+            print(f'第{i + 1}試合を開始')
 
             send('Button A', 0.1) # 勝負を　しかけてきた！
             sleep(22)
 
             # スペシャルアップを使う
+            print('スペシャルアップを使用します')
+
             send('LY MAX', 0.1)
             sleep(0.1)
 
@@ -145,7 +148,8 @@ try:
                 send('Button A', 0.1)
                 sleep(0.1)
 
-                if random.randrange(2):
+                # 残り秒数
+                if random.randrange(0, 5) == 0:
                     time_left = round(fight_time - (time.time() - fight_start_time), 2)
                     print(f'[{dt.now()}] 残り{time_left}秒')
 
