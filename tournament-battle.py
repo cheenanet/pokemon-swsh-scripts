@@ -9,8 +9,12 @@ import random
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
 parser.add_argument('--delay', type=int, default=10)
-parser.add_argument('--fight_time', type=int, default=150)
+parser.add_argument('--fight-time', type=int, default=150)
+parser.add_argument('--no-dynamax', action='store_false')
 args = parser.parse_args()
+
+# ダイマックスによる遅延を追加
+fight_time = args.fight_time + (20 if args.no_dynamax == True else 0)
 
 dt = datetime.datetime
 
@@ -114,19 +118,35 @@ try:
             sleep(0.1)
 
             send('LY MIN', 0.1)
+            sleep(0.5)
+
+            # ダイマックスする
+            print('ダイマックスします')
+
+            send('Button A', 0.1)
+            sleep(0.5)
+
+            send('LX MIN', 0.1)
+            sleep(0.1)
+
+            send('Button A', 0.1)
+            sleep(0.2)
+
+            # ダイマックスわざ
+            send('Button A', 0.1)
             sleep(0.1)
 
             fight_start_time = time.time()
 
             while True:
-                if (time.time() - fight_start_time) > args.fight_time:
+                if (time.time() - fight_start_time) > fight_time:
                     break
 
                 send('Button A', 0.1)
                 sleep(0.1)
 
                 if random.randrange(2):
-                    time_left = round(args.fight_time - (time.time() - fight_start_time), 2)
+                    time_left = round(fight_time - (time.time() - fight_start_time), 2)
                     print(f'[{dt.now()}] 残り{time_left}秒')
 
             print('勝利')
