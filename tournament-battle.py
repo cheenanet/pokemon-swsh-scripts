@@ -10,6 +10,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('port')
 parser.add_argument('--delay', type=int, default=10)
 parser.add_argument('--fight-time', type=int, default=150)
+parser.add_argument('--no-use-x-spatk', action='store_false')
 parser.add_argument('--no-dynamax', action='store_false')
 args = parser.parse_args()
 
@@ -88,40 +89,41 @@ try:
             sleep(22)
 
             # スペシャルアップを使う
-            print('スペシャルアップを使用します')
+            if not no_use_x_spatk:
+                print('スペシャルアップを使用します')
 
-            send('LY MAX', 0.1)
-            sleep(0.1)
+                send('LY MAX', 0.1)
+                sleep(0.1)
 
-            send('LY MAX', 0.1)
-            sleep(0.1)
+                send('LY MAX', 0.1)
+                sleep(0.1)
 
-            send('Button A', 0.1)
-            sleep(1.5)
+                send('Button A', 0.1)
+                sleep(1.5)
 
-            send('LX MAX', 0.1)
-            sleep(0.1)
+                send('LX MAX', 0.1)
+                sleep(0.1)
 
-            send('LX MAX', 0.1)
-            sleep(0.1)
+                send('LX MAX', 0.1)
+                sleep(0.1)
 
-            send('LY MAX', 0.1)
-            sleep(0.1)
+                send('LY MAX', 0.1)
+                sleep(0.1)
 
-            send('LY MAX', 0.1)
-            sleep(0.1)
+                send('LY MAX', 0.1)
+                sleep(0.1)
 
-            send('Button A', 0.1)
-            sleep(0.2)
+                send('Button A', 0.1)
+                sleep(0.2)
 
-            send('Button A', 0.1)
-            sleep(12)
+                send('Button A', 0.1)
+                sleep(12)
 
-            send('LY MIN', 0.1)
-            sleep(0.1)
+                send('LY MIN', 0.1)
+                sleep(0.1)
 
-            send('LY MIN', 0.1)
-            sleep(0.5)
+                send('LY MIN', 0.1)
+                sleep(0.5)
 
             # ダイマックスする
             if not args.no_dynamax:
