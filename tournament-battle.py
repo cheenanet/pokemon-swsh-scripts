@@ -8,6 +8,7 @@ import random
 
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
+parser.add_argument('--delay', type=int, default=10)
 parser.add_argument('--fight_time', type=int, default=150)
 args = parser.parse_args()
 
@@ -21,6 +22,11 @@ def send(msg, duration=0):
     ser.write(b'RELEASE\r\n')
 
 ser = serial.Serial(args.port, 9600)
+
+# 遅延を入れる
+print(f'{args.delay}秒の遅延を入れています…（--delayで指定可能）')
+sleep(args.delay)
+send('Button B', 0.1)
 
 try:
     start_time = time.time()

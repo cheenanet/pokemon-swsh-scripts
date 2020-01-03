@@ -7,6 +7,7 @@ import datetime
 
 parser = argparse.ArgumentParser()
 parser.add_argument('port')
+parser.add_argument('--delay', type=int, default=10)
 parser.add_argument('--laps', type=int, default=20)
 args = parser.parse_args()
 
@@ -20,6 +21,11 @@ def send(msg, duration=0):
 free_time = 18
 
 ser = serial.Serial(args.port, 9600)
+
+# 遅延を入れる
+print(f'{args.delay}秒の遅延を入れています…（--delayで指定可能）')
+sleep(args.delay)
+send('Button B', 0.1)
 
 try:
     for i in range(0, 6): # 5匹孵化×6回
