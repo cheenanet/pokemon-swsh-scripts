@@ -124,20 +124,21 @@ try:
             sleep(0.5)
 
             # ダイマックスする
-            print('ダイマックスします')
+            if not args.no_dynamax:
+                print('ダイマックスします')
 
-            send('Button A', 0.1)
-            sleep(0.5)
+                send('Button A', 0.1)
+                sleep(0.5)
 
-            send('LX MIN', 0.1)
-            sleep(0.1)
+                send('LX MIN', 0.1)
+                sleep(0.1)
 
-            send('Button A', 0.1)
-            sleep(0.2)
+                send('Button A', 0.1)
+                sleep(0.2)
 
-            # ダイマックスわざ
-            send('Button A', 0.1)
-            sleep(0.1)
+                # ダイマックスわざ
+                send('Button A', 0.1)
+                sleep(0.1)
 
             fight_start_time = time.time()
 
