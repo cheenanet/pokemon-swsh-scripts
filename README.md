@@ -37,7 +37,7 @@ sudo avrdude -p m32u4 -c avr109 -D -P $(ls /dev/ttyUSB*) -b 57600 -U flash:w:Joy
 シュートスタジアムのトーナメント戦の自動化。
 使用方法:  
 `python3 tournament-battle.py --fight_time 150 /dev/ttyUSB0`
-    - `--fight-time`: 一試合の時間（秒）。長くかかる場合は増やす（デフォルト: 150）。
+    - `--fight-time [time]`: 一試合の時間（秒）。長くかかる場合は増やす（デフォルト: 150）。
     - `--no-use-x-spatk`: スペシャルアップを使わない。
     - `--no-dynamax`: ダイマックス技を使わない（使うと試合時間が20秒プラスされる。デフォルトで使う）。
 - egg-hatching.py  
@@ -50,7 +50,7 @@ sudo avrdude -p m32u4 -c avr109 -D -P $(ls /dev/ttyUSB*) -b 57600 -U flash:w:Joy
 ポケモン逃がしの自動化。ボックス内のポケモンをすべて逃がす。1列目から順番に逃がしているため、並びに空きがないようにすること。  
 使用方法:  
 `python3 release.py --count 12 /dev/ttyUSB0`
-    - `--count`: 逃がすポケモンの数。
+    - `--count [count]`: 逃がすポケモンの数。
 
 ## バグ報告等
 - Issues（GitHubのアカウント必要）: https://github.com/cheenanet/pokemon-swsh-scripts/issues
