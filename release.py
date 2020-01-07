@@ -53,7 +53,7 @@ try:
         send('LX MAX', 0.1) # 次へ
         sleep(0.2)
 
-        if i + 1 % 6 == 0:
+        if (i + 1) % 6 == 0:
             send('LX MAX', 0.1) # てもちへ
             sleep(0.1)
 
