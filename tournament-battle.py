@@ -10,8 +10,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('port')
 parser.add_argument('--delay', type=int, default=10)
 parser.add_argument('--fight-time', type=int, default=150)
-parser.add_argument('--use-x-spatk', action='store_false')
-parser.add_argument('--use-dynamax', action='store_false')
+parser.add_argument('--use-x-spatk', action='store_true')
+parser.add_argument('--use-dynamax', action='store_true')
 args = parser.parse_args()
 
 # ダイマックスによる遅延を追加
