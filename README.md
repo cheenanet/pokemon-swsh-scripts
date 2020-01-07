@@ -40,7 +40,7 @@ sudo avrdude -p m32u4 -c avr109 -D -P $(ls /dev/ttyUSB*) -b 57600 -U flash:w:Joy
 - tournament-battle.py  
 シュートスタジアムのトーナメント戦の自動化。
 使用方法:  
-`python3 tournament-battle.py --fight_time 150 /dev/ttyUSB0`
+`python3 tournament-battle.py --fight-time 150 /dev/ttyUSB0`
     - `--fight-time [time]`: 一試合の時間（秒）。長くかかる場合は増やす（デフォルト: 150）。
     - `--use-x-spatk`: スペシャルアップを使う（デフォルト：使わない）。
     - `--use-dynamax`: 技リストの一番上をダイマックス技として使う（使うと試合時間が20秒プラスされる。デフォルト：使わない）。
