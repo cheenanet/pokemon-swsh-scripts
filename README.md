@@ -33,6 +33,10 @@ sudo avrdude -p m32u4 -c avr109 -D -P $(ls /dev/ttyUSB*) -b 57600 -U flash:w:Joy
 インストール後は `Switch-Fightstick` ディレクトリを削除してもよい。
 
 ## 掲載内容
+
+各スクリプト共通オプション  
+- `--delay`: コマンドを実行するまでの遅延（秒）。初回接続時にマイコンとの通信を調整する用に。2回目以降などは `--delay 0` など。
+
 - tournament-battle.py  
 シュートスタジアムのトーナメント戦の自動化。
 使用方法:  
