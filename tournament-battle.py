@@ -15,7 +15,7 @@ parser.add_argument('--use-dynamax', action='store_false')
 args = parser.parse_args()
 
 # ダイマックスによる遅延を追加
-fight_time = args.fight_time + (20 if args.no_dynamax == True else 0)
+fight_time = args.fight_time + (20 if args.use_dynamax == True else 0)
 
 dt = datetime.datetime
 
