@@ -10,8 +10,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('port')
 parser.add_argument('--delay', type=int, default=10)
 parser.add_argument('--fight-time', type=int, default=150)
-parser.add_argument('--no-use-x-spatk', action='store_false')
-parser.add_argument('--no-dynamax', action='store_false')
+parser.add_argument('--use-x-spatk', action='store_false')
+parser.add_argument('--use-dynamax', action='store_false')
 args = parser.parse_args()
 
 # ダイマックスによる遅延を追加
@@ -89,7 +89,7 @@ try:
             sleep(22)
 
             # スペシャルアップを使う
-            if not args.no_use_x_spatk:
+            if args.use_x_spatk:
                 print('スペシャルアップを使用します')
 
                 send('LY MAX', 0.1)
@@ -126,7 +126,7 @@ try:
                 sleep(0.5)
 
             # ダイマックスする
-            if not args.no_dynamax:
+            if args.use_dynamax:
                 print('ダイマックスします')
 
                 send('Button A', 0.1)
