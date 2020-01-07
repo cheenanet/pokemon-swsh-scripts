@@ -89,7 +89,7 @@ try:
             sleep(22)
 
             # スペシャルアップを使う
-            if not no_use_x_spatk:
+            if not args.no_use_x_spatk:
                 print('スペシャルアップを使用します')
 
                 send('LY MAX', 0.1)
