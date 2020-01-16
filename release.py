@@ -23,7 +23,7 @@ ser = serial.Serial(args.port, 9600)
 # 遅延を入れる
 print(f'{args.delay}秒の遅延を入れています…（--delayで指定可能）')
 sleep(args.delay)
-send('Button B', 0.1)
+send('Button LCLICK', 0.1)
 
 try:
     for i in range(0, args.count):
