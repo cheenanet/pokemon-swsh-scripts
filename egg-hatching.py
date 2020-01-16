@@ -31,7 +31,7 @@ try:
     for i in range(0, 6): # 5匹孵化×6回
         start_time = time.time()
 
-        for j in range(0, 5): # 1匹孵化×5
+        for poke_count in range(0, 5): # 1匹孵化×5
             lap_start_time = time.time()
 
             send('Button X', 0.1)
@@ -85,12 +85,13 @@ try:
                 send('LY MIN', 0.5)
                 send('LX MIN', 0.5)
 
-            # ボタン押せるようになるまで待機
-            for wait in range(0, free_time):
-                send('Button B', 0.1)
-                sleep(1)
+            # ボタン押せるようになるまで待機（初回はスキップ）
+            if not poke_count == 0:
+                for wait in range(0, free_time):
+                    send('Button B', 0.1)
+                    sleep(1)
 
-            print(f'{j + 1}つ目のタマゴが完了：{round(time.time() - lap_start_time, 2)}秒経過（合計：{round(time.time() - start_time, 2)}秒）')
+            print(f'{poke_count + 1}つ目のタマゴが完了：{round(time.time() - lap_start_time, 2)}秒経過（合計：{round(time.time() - start_time, 2)}秒）')
 
         # 孵化歩数の残り2/3を歩く
         for lap in range(0, args.laps * 2):
