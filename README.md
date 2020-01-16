@@ -55,6 +55,10 @@ sudo avrdude -p m32u4 -c avr109 -D -P $(ls /dev/ttyUSB*) -b 57600 -U flash:w:Joy
 使用方法:  
 `python3 release.py --count 12 /dev/ttyUSB0`
     - `--count [count]`: 逃がすポケモンの数。
+    
+## FAQ
+- 孵化自動化中、草むらに突入した  
+Ctrl + Z でプログラムを一時停止し、戦闘逃げたら `fg %1` でプログラムを再開する。
 
 ## バグ報告等
 - Issues（GitHubのアカウント必要）: https://github.com/cheenanet/pokemon-swsh-scripts/issues
