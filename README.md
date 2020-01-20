@@ -8,30 +8,40 @@
 - [ebith/Switch-Fightstick](https://github.com/ebith/Switch-Fightstick)
 - Python 3.6以上
 
-## インストール
+## ダウンロード
+```
+$ git clone https://github.com/cheenanet/pokemon-swsh-scripts.git
+```
+
+## アップデート
+
+```
+$ git pull
+```
+
+## ebith/Switch-Fightstick のインストール
 `/dev/ttyUSB0` は環境に応じて変更すること。Linuxでは `/dev/ttyUSB0` など。Windows Subsystem for Linux (WSL)の場合は `/dev/ttyS1` など（COMポートの番号に合わせる）。
 
 ```
 # 必要なものをインストール
-sudo apt install avrdude gcc-avr
+$ sudo apt install avrdude gcc-avr
 
 # ebith/Switch-Fightstick をクローン
-git clone --recursive https://github.com/ebith/Switch-Fightstick.git
+$ git clone --recursive https://github.com/ebith/Switch-Fightstick.git
 
 # ディレクトリを移動
-cd Switch-Fightstick
+$ cd Switch-Fightstick
 
 # ビルド
-make
+$ make
 
 # バイナリを書き込むためにPro MicroをDFUモードにする必要がある。
 # 基板のRSTとGNDをテストワイヤでつなげ、数秒以内に実行する。
 # オプションの m32u4 はCPUが atmega32u4 の場合。atmega16u2 の場合は m16u2 にする。 
-sudo avrdude -p m32u4 -c avr109 -D -P $(ls /dev/ttyUSB*) -b 57600 -U flash:w:Joystick.hex
+$ sudo avrdude -p m32u4 -c avr109 -D -P $(ls /dev/ttyUSB*) -b 57600 -U flash:w:Joystick.hex
 ```
 
 インストール後は `Switch-Fightstick` ディレクトリを削除してもよい。
-
 ## 掲載内容
 
 各スクリプト共通オプション  
