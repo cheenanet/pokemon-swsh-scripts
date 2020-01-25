@@ -82,7 +82,7 @@ try:
                 send('LY MAX', 0.5)
                 send('Button B', 0.1)
                 send('LX MAX', 0.5)
-                send('LY MIN', 0.5)
+                send('LY MIN', 0.6)
                 send('LX MIN', 0.5)
 
             # ボタン押せるようになるまで待機（初回はスキップ）
@@ -100,7 +100,7 @@ try:
             send('LY MAX', 0.5)
             send('Button B', 0.1)
             send('LX MAX', 0.5)
-            send('LY MIN', 0.5)
+            send('LY MIN', 0.6)
             send('LX MIN', 0.5)
 
         # ボタン押せるようになるまで待機
