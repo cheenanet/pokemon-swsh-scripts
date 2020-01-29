@@ -32,6 +32,7 @@ ser = serial.Serial(args.port, 9600)
 print(f'{args.delay}秒の遅延を入れています…（--delayで指定可能）')
 sleep(args.delay)
 send('Button LCLICK', 0.1)
+sleep(1)
 
 try:
     start_time = time.time()
